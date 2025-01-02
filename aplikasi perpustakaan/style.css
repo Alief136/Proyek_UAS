@@ -1,0 +1,161 @@
+body {
+    color: black;
+    text-align: justify;
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+#canvas {
+    margin: 0 auto;
+    width: 90%;
+    border: 1px solid silver;
+}
+
+#header {
+    padding: 10px;
+    font-size: 30px;
+    text-align: center;
+    color: #00008B;
+}
+
+#header1 {
+    color: #00BFFF;
+    padding: 20px;
+    min-height: 470px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+#menu {
+    background-color: #00BFFF;
+}
+
+#menu .active {
+    background-color: #1E90FF;
+}
+
+#menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#menu ul li {
+    display: inline-table;
+}
+
+#menu ul li:hover {
+    background-color: #1E90FF;
+}
+
+#menu ul li a:hover {
+    color: black;
+}
+
+#menu ul li a {
+    display: block;
+    text-decoration: none;
+    padding: 0 15px;
+    line-height: 40px;
+    color: #FFFFFF;
+}
+
+#isi {
+    min-height: 470px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+#isi .judul {
+    font-size: 30px;
+    color: black;
+    font-weight: bold;
+}
+
+#isi img.fotoberanda {
+    width: 100%;
+    margin: 0 auto;
+    height: 450px;
+}
+
+#profilimg img {
+    width: 10%;
+    height: 25%;
+    margin: 0 auto;
+    display: block;
+}
+
+#footer {
+    background-color: #DCDCDC;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Lofin */
+
+body#login-page {
+    font-family: sans-serif;
+    font-size: 14px;
+    background-color: #847c7c;
+    background-image: url('gambar/bg_perpus.jpg');
+    background-size: cover; /* Mengisi seluruh area dengan gambar */
+    background-repeat: no-repeat; /* Mencegah gambar terulang */
+    display: flex; /* Aktifkan Flexbox pada body */
+    justify-content: center; /* Pusatkan secara horizontal */
+    align-items: center; /* Pusatkan secara vertikal */
+    height: 100vh; /* Pastikan body memenuhi tinggi layar */
+    margin: 0; /* Hapus margin default */
+}
+
+#inputan {
+    background-color: transparent; /* Benar-benar transparan */
+    padding: 20px;
+    border-radius: 15px; /* Tetap membuat sudutnya melengkung */
+    box-shadow: none; /* Hapus bayangan jika benar-benar transparan */
+    text-align: center;
+    width: 100%; /* Untuk fleksibilitas */
+    max-width: 400px; /* Atur lebar maksimum */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Tambahkan garis batas tipis untuk visibilitas */
+    color: #ffffff; /* Pastikan teks tetap terbaca */
+}
+
+
+
+
+#utana {
+    width: 300px;
+    margin: auto;
+    margin-top: 120px;
+}
+
+#header {
+    padding: 15px;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    background-color: #3C8371;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom: 5px solid #9ACD32;
+}
+
+.log {
+    padding: 10px;
+    border: 1px solid #9ACD32;
+    width: 240px;
+}
+
+.ig {
+    width: 260px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #3CB371;
+    color: #fff;
+}
+
+.ig:hover {
+    background-color: #800000;
+    cursor: pointer;
+}
