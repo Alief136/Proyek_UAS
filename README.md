@@ -1,3 +1,3 @@
 - Taruh ke direktori htdocs
-<br>
+- import database
 - paste "http://localhost/aplikasi%20perpustakaan/index.php"
