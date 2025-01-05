@@ -1,0 +1,113 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* Heading utama */
+h1 {
+    text-align: center;
+    color: #6495ED;
+    margin-top: 20px;
+}
+
+/* Gaya untuk tombol link */
+a {
+    display: inline-block;
+    padding: 8px 15px;
+    margin: 10px 0;
+    background-color: #6495ED;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+a:hover {
+    background-color: #45a049;
+}
+
+/* Tabel */
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+table th {
+    background-color: #6495ED;
+    color: white;
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tr:hover {
+    background-color: #eaf4ff;
+}
+
+
+a {
+    display: inline-block;
+    padding: 8px 15px;
+    margin: 10px 10px; 
+    background-color: #6495ED;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+a:hover {
+    background-color: #45a049;
+}
+
+
+.button-container {
+    text-align: center; 
+    margin-top: 20px;   
+}
+
+
+
+table td a {
+    padding: 5px 10px;
+    margin: 0 5px;
+    border-radius: 4px;
+    font-size: 12px;
+    display: inline-block;
+}
+
+table td a:first-child {
+    background-color: #6495ED;
+    color: white;
+}
+
+table td a:first-child:hover {
+    background-color: #45a049;
+}
+
+table td a:last-child {
+    background-color: #ff4d4d;
+    color: white;
+}
+
+table td a:last-child:hover {
+    background-color: #e60000;
+}
