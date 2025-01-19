@@ -1,10 +1,8 @@
 <?php
 include '../../config/koneksi.php';
 
-// Ambil keyword dari form pencarian (jika ada)
 $keyword = isset($_GET['keyword']) ? $_GET['keyword'] : '';
 
-// Query untuk menampilkan data buku dengan filter keyword
 $query = "SELECT * FROM buku WHERE 
           kode_buku LIKE '%$keyword%' OR 
           judul LIKE '%$keyword%' OR 
@@ -22,7 +20,6 @@ $result = $conn->query($query);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Buku</title>
     <style>
-        /* General Styling */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -30,13 +27,11 @@ $result = $conn->query($query);
             background-color: #f4f4f9;
             color: #333;
         }
-
         h1 {
             text-align: center;
             color: #2c3e50;
             margin: 20px 0;
         }
-
         a {
             text-decoration: none;
             color: white;
@@ -47,17 +42,13 @@ $result = $conn->query($query);
             display: inline-block;
             transition: background-color 0.3s ease;
         }
-
         a:hover {
             background-color: #0056b3;
         }
-
-        /* Form Styling */
         form {
             text-align: center;
             margin-bottom: 20px;
         }
-
         form input[type="text"] {
             width: 50%;
             padding: 10px;
@@ -66,7 +57,6 @@ $result = $conn->query($query);
             border-radius: 5px;
             outline: none;
         }
-
         form button {
             padding: 10px 15px;
             background-color: #28a745;
@@ -76,21 +66,16 @@ $result = $conn->query($query);
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
-
         form button:hover {
             background-color: #218838;
         }
-
         form a {
             color: white;
             background-color: #2c3e50;
         }
-
         form a:hover {
             background-color: #5a6268;
         }
-
-        /* Table Styling */
         table {
             width: 90%;
             margin: 0 auto;
@@ -98,18 +83,15 @@ $result = $conn->query($query);
             background: white;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-
         table th, table td {
             text-align: left;
             padding: 10px;
             border: 1px solid #ddd;
         }
-
         table th {
             background-color: #2c3e50;
             color: white;
         }
-
         table tr:nth-child(even) {
             background-color: #f9f9f9;
         }
@@ -117,54 +99,43 @@ $result = $conn->query($query);
         table tr:hover {
             background-color: #f1f1f1;
         }
-
         table td a {
             padding: 5px 10px;
             border-radius: 3px;
         }
-
         table td a:first-child {
             background-color: #ffc107;
         }
-
         table td a:first-child:hover {
             background-color: #e0a800;
         }
-
         table td a:last-child {
             background-color: #dc3545;
         }
-
         table td a:last-child:hover {
             background-color: #c82333;
         }
-
-        /* Responsiveness */
         @media (max-width: 600px) {
             form input[type="text"] {
                 width: 70%;
             }
-
             table {
                 display: block;
                 overflow-x: auto;
                 white-space: nowrap;
             }
-
             a {
                 font-size: 14px;
                 padding: 6px 8px;
             }
         }
-        /* Container untuk tombol di bawah tabel */
         .button-container {
             display: flex;
-            justify-content: center; /* Menjaga tombol sejajar secara horizontal */
-            gap: 10px; /* Memberikan jarak antar tombol */
-            margin-top: 20px; /* Menambahkan jarak antara tabel dan tombol */
+            justify-content: center; 
+            gap: 10px; 
+            margin-top: 20px; /
         }
 
-        /* Untuk menjaga tombol agar tidak terlalu besar */
         .button-container a {
             padding: 10px 20px;
             text-align: center;
@@ -180,9 +151,10 @@ $result = $conn->query($query);
     
     <!-- Form Pencarian -->
     <form method="GET" action="index.php">
+    <a href="tambah.php" style="background-color: #28a745;">Tambah Buku</a>
         <input type="text" name="keyword" placeholder="Cari buku..." value="<?= htmlspecialchars($keyword); ?>">
         <button type="submit">Cari</button>
-        <a href="index.php">Reset</a> <!-- Tombol reset untuk kembali ke semua data -->
+        <a href="index.php">Reset</a> 
     </form>
 
     <table>
@@ -224,9 +196,29 @@ $result = $conn->query($query);
     </table>
     <!-- Container untuk tombol di bawah tabel -->
 <div class="button-container">
-    <a href="tambah.php" style="background-color: #28a745;">Tambah Buku</a>
-    <a href="../../home.php" style="background-color: #2c3e50;">Kembali ke Home</a>
+    
+    <a href="../../home.php" style="background-color: #007bff;">Kembali ke Home</a>
 </div>
+<button id="scrollToTopBtn" style="display:none; position:fixed; bottom:20px; right:20px; padding:10px 15px; background-color:#2c3e50; color:white; border:none; border-radius:5px; cursor:pointer;">⬆️</button>
+
+<script>
+    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+    window.onscroll = function () {
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            scrollToTopBtn.style.display = "block";
+        } else {
+            scrollToTopBtn.style.display = "none";
+        }
+    };
+
+    scrollToTopBtn.addEventListener("click", function () {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth" 
+        });
+    });
+</script>
 
 </body>
 </html>

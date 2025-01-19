@@ -24,12 +24,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Query dan header berdasarkan modul yang dipilih
     if ($modul == 'buku') {
-        $query = "SELECT kode_buku AS 'Kode Buku', judul AS 'Judul Buku', penulis AS 'Penulis', penerbit AS 'Penerbit', tahun_terbit AS 'Tahun Terbit', rak AS 'Rak', stok AS 'Stok' FROM buku";
-        $headers = ['Kode Buku', 'Judul Buku', 'Penulis', 'Penerbit', 'Tahun Terbit', 'Rak', 'Stok'];
+        $query = "SELECT kode_buku AS 'Kode Buku', judul AS 'Judul Buku', penulis AS 'Penulis', kategori AS 'Kategori', tahun_terbit AS 'Tahun Terbit', rak AS 'Rak', stok AS 'Stok' FROM buku";
+
+        $headers = ['Kode Buku', 'Judul Buku', 'Penulis', 'Kategori', 'Tahun Terbit', 'Rak', 'Stok'];
         $filename = "Data_Buku";
     } elseif ($modul == 'anggota') {
-        $query = "SELECT id_anggota AS 'ID Anggota', nama AS 'Nama', alamat AS 'Alamat', telepon AS 'Telepon' FROM anggota";
-        $headers = ['ID Anggota', 'Nama', 'Alamat', 'Telepon'];
+        $query = "SELECT id_anggota AS 'ID Anggota', nama AS 'Nama', email AS 'Email', telepon AS 'Telepon' FROM anggota";
+        $headers = ['ID Anggota', 'Nama', 'Email', 'Telepon'];
         $filename = "Data_Anggota";
     } elseif ($modul == 'peminjaman') {
         $query = "SELECT p.id_peminjaman AS 'ID Peminjaman', a.nama AS 'Nama Anggota', b.judul AS 'Judul Buku', 

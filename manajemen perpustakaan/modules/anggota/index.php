@@ -115,7 +115,6 @@ $result = $conn->query($query);
             background-color: #f1f1f1;
         }
 
-        /* Responsiveness */
         @media (max-width: 600px) {
             table {
                 display: block;
@@ -135,12 +134,11 @@ $result = $conn->query($query);
 
     <!-- Form Pencarian -->
     <form method="GET">
+    <a href="tambah.php" style="background-color: #28a745;">Tambah Anggota</a>
         <input type="text" name="keyword" placeholder="Cari nama, email, atau telepon" value="<?= htmlspecialchars($keyword); ?>">
         <button type="submit">Cari</button>
     </form>
 
-    <!-- Tombol tambah anggota -->
-    <a href="tambah.php" style="background-color: #28a745;">Tambah Anggota</a>
 
     <!-- Tabel Data Anggota -->
     <table>
@@ -171,5 +169,29 @@ $result = $conn->query($query);
         <?php endif; ?>
     </table>
     <a href="../../home.php" style="background-color: #007bff;">Kembali ke Home</a>
+    <button id="scrollToTopBtn" style="display:none; position:fixed; bottom:20px; right:20px; padding:10px 15px; background-color:#2c3e50; color:white; border:none; border-radius:5px; cursor:pointer;">⬆️ </button>
+
+    <script>
+    // Ambil tombol
+    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+    // Tampilkan tombol saat pengguna scroll ke bawah
+    window.onscroll = function () {
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            scrollToTopBtn.style.display = "block";
+        } else {
+            scrollToTopBtn.style.display = "none";
+        }
+    };
+
+    // Fungsi untuk scroll ke atas
+    scrollToTopBtn.addEventListener("click", function () {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth" // Gulir halus
+        });
+    });
+</script>
+
 </body>
 </html>

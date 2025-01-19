@@ -2,25 +2,25 @@
 session_start();
 include 'config/koneksi.php';
 
-// Periksa apakah form login telah disubmit
+
 if (isset($_POST['login'])) {
     $username = $_POST['username'];
-    $password = $_POST['password']; // Ambil password yang dimasukkan user
+    $password = $_POST['password']; 
 
-    // Hindari SQL injection dengan menggunakan prepared statement
+  
     $query = $conn->prepare("SELECT * FROM user WHERE username = ? AND password = ?");
-    $query->bind_param("ss", $username, $password); // Bind parameter untuk mencegah SQL injection
+    $query->bind_param("ss", $username, $password); 
     $query->execute();
     $result = $query->get_result();
 
-    // Cek apakah ada baris yang cocok
+
     if ($result->num_rows > 0) {
-        // Jika login berhasil, buat session dan redirect
+     
         $_SESSION['username'] = $username;
         header('Location:home.php');
         exit();
     } else {
-        // Jika login gagal, beri pesan error
+     
         $error = "Username atau password salah!";
     }
 }
@@ -35,7 +35,7 @@ if (isset($_POST['login'])) {
     <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
 <style>
- /* General Styling */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -45,7 +45,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Memastikan body mengambil seluruh tinggi layar */
+    height: 100vh; 
     flex-direction: column;
 }
 
@@ -62,7 +62,7 @@ h1 {
     padding: 20px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    width: 100%; /* Agar lebar form bisa responsif */
+    width: 100%; 
 }
 
 form {
@@ -105,7 +105,7 @@ div[style="color: red; text-align: center;"] {
     text-align: center;
 }
 
-/* Responsiveness */
+
 @media (max-width: 600px) {
     .form-container {
         width: 90%;
